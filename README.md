@@ -1,112 +1,96 @@
-# Express API - JWT Auth Back-End - Setup
+# MEN Stack Starter Template with Session Authentication
 
-## Setup
+Welcome to the MEN Stack Starter Template! This template provides a foundational setup for building web applications using MongoDB, Express.js, and Node.js, complete with session authentication. This is ideal for students looking to kickstart their development projects.
 
-Open your Terminal application and navigate to your projects codespace directory:
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Clone the Repository](#clone-the-repository)
+- [Installation](#installation)
+- [Environment Setup](#environment-setup)
+- [Running the Application](#running-the-application)
+- [Removing Git and Creating Your Own Repo](#removing-git-and-creating-your-own-repo)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Cloning the Auth boilerplate
+## Prerequisites
 
-This lecture uses the [Express API JWT Auth Template](https://github.com/SEB-PT-6-Solutions/men-stack-session-auth-template.git) as starter code. The template includes code to authenticate users with JWT tokens.
+Before you begin, ensure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/) (LTS or later)
+- [MongoDB](https://www.mongodb.com/) (make sure it's running)
+- [Git](https://git-scm.com/) (for cloning the repository)
 
-Navigate to the [Express API JWT Auth Template](https://github.com/SEB-PT-6-Solutions/men-stack-session-auth-template.git) and clone the repository to your machine:
+## Clone the Repository
+
+To clone this repository, open your terminal and run:
 
 ```bash
-git clone https://github.com/SEB-PT-6-Solutions/men-stack-session-auth-template.git
+git clone https://github.com/SEB-PT-6-Solutions/men-stack-session-auth-template.git YOUR_APP_NAME_HERE
 ```
 
-Once we have the repository on our machines, we can change the name of the directory to `'express-api-hoot-back-end'`:
-
-```bash
-mv express-api-jwt-auth-template YOUR_APP_NAME
-```
-
-Next, `cd` into your renamed directory:
-
+## Installation
+Navigate into the cloned directory:
 ```bash
 cd YOUR_APP_NAME
 ```
 
-Finally, remove the existing `.git` information from this template:
-
-```bash
-rm -rf .git
-```
-
-> Removing the `.git` info is important as this is just a starter template provided by GA. You do not need the existing git history for this project.
-
-## GitHub setup
-
-To add this project to GitHub, initialize a new Git repository:
-
-```bash
-git init
-git add .
-git commit -m "init commit"
-```
-
-Make a new repository on [GitHub](https://github.com/) named `YOUR_APP_NAME`.
-
-Link your local project to your remote GitHub repo:
-
-```bash
-git remote add origin https://github.com/<github-username>/YOUR_APP_NAME.git
-git push origin main
-```
-
-> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above. Also replace `YOUR_APP_NAME` with your project name
-
-Open the project's folder in your code editor:
-
-```bash
-code .
-```
-
-## Install dependencies
-
-Next, you will want to install all of the packages listed in `package.json`
+Then, install the necessary dependencies:
 
 ```bash
 npm i
 ```
 
-## Create your .gitignore
-
-Run the following command in your terminal:
-
-```bash
-touch .gitignore
+## Environment Setup
+```plaintext
+MONGODB_URI=atlas_db_uri
+SESSION_SECRET=your_secret_key
 ```
+Replace `atlas_db_uri` with your desired database name and `your_secret_key` with a secure key.
 
-Once these files are created, add `.env` and `node_modules` to your `.gitignore` file. Doing so will prevent those files and directories from being tracked and we can be confident that any data we add there will not be pushed up to GitHub.
+## Removing Git and Creating Your Own Repo
+To remove the existing Git history and create your own repository:
 
-```text
-.env
-node_modules
-```
+1. Remove the existing .git folder:
+  ```bash
+  rm -rf .git
+  ```
+2. Initialize a new Git repository:
+  ```bash
+  git init
+  ```
+3. Add all files to the new repository:
+  ```bash
+  git add .
+  ```
+4. Commit the changes
+   ```bash
+   git commit -m "Initial commit"
+   ``` 
+5. Create a new repository on GitHub (or any other platform) and follow the instructions to push your local repository.
+  Make a new repository on [GitHub](https://github.com/) named `<your-project-name>`
+  Now link your local project to your remote GitHub repo:
+  ```bash
+  git remote add origin https://github.com/<github-username>/YOUR_APP_NAME.git
+  git push origin main
+  ```
 
-## Create your .env
+> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above.
 
-Run the following command in your terminal:
-
-```bash
-touch .env
-```
-
-Lastly, we want to add a `MONGODB_URI` and a `JWT_SECRET`.
-
-Add the following secret keys to your application:
-
-```text
-MONGODB_URI=mongodb+srv://<username>:<password>@sei-w0kys.azure.mongodb.net/hoot?retryWrites=true
-JWT_SECRET=supersecret
-```
-
-> If you are unsure of where to obtain your MongoDB URI, please refer to the MongoDB Atlas Setup Lab.
-
-Start the application with the following command:
-
+## Running the application
 ```bash
 npm run dev
 ```
+
+## Features
+- User registration and login with session management
+- Basic CRUD operations
+- Modular file structure
+- Example routes and controllers
+- Basic user model setup
+- Middleware for templates and authorization
+- Basic authentication flow
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 Happy Coding!
